@@ -5,7 +5,7 @@ fis-quickstart-demo是FIS的快速上手示例，请配合[文档](http://fis.ba
 
 基于fis官网的demo，增加了rewrite转发。
 
-## 本地 URL 模拟转发
+### 本地 URL 模拟转发
 
 FIS 的 rewrite 模块。用于本地浏览时，url 的转发，覆盖 fis 默认的 url 规则，模拟线上 url 规则，ajax 请求，文件转发等。
 
@@ -20,7 +20,7 @@ fis会将请求都扔给www目录下面的index.php，index.php 会引入rewrite
 
 默认读取根目录server.conf文件(在www目录下的rewrite类中静态)，书写方式是：
 
-## 基础配置
+### 基础配置
 
 在模块目录下通过配置文件 server.conf 文件进行配置，配置方式是：
 
@@ -34,7 +34,7 @@ rewrite 和 redirect 开头的会被翻译成一条匹配规则，自上而下�
     template ^\/(.*)\?.*  /home/page/index.tpl
     redirect ^\/index\?.* /home/page/index
 
-## 配置文件说明
+### 配置文件说明
 
 1. 配置文件每一行为一条规则。
 2. 格式为：匹配类型 (空格) 匹配url正则 (空格) 命中正则后的目的文件路径或者url。 rewrite、redirect和template是fis默认的三种匹配类型。
@@ -43,7 +43,7 @@ rewrite 和 redirect 开头的会被翻译成一条匹配规则，自上而下�
 5. template : 为了完全模拟线上url，可通过template配置对应的url规则对应相应的模板进行访问，访问url不变。
 6. redirect ： 匹配规则后重定向到另一个url。
 
-## 注意:
+### 注意:
 
 1. server.conf专门配置转发规则，文件名不能改哦
 2. 项目很大，多模块时，一个模块配置server.conf就可以啦，比如在common模块配置全站的转发规则，否则会覆盖
