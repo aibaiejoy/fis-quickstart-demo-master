@@ -4,7 +4,7 @@ fis-quickstart-demo
 fis-quickstart-demo是FIS的快速上手示例，请配合[文档](http://fis.baidu.com/docs/beginning/getting-started.html)使用
 
 
-本地 URL 模拟转发
+## 本地 URL 模拟转发
 
 FIS 的 rewrite 模块。用于本地浏览时，url 的转发，覆盖 fis 默认的 url 规则，模拟线上 url 规则，ajax 请求，文件转发等。
 
@@ -19,7 +19,7 @@ $ fisp server install rewrite
 
 默认读取根目录server.conf文件(在www目录下的rewrite类中静态)，书写方式是：
 
-基础配置
+## 基础配置
 
 在模块目录下通过配置文件 server.conf 文件进行配置，配置方式是：
 
@@ -29,10 +29,11 @@ rewrite ： 匹配规则后转发到一个文件
 template ： 匹配规则后转发到一个模板文件，但url不改变，只针对模板
 redirect ： 匹配规则后重定向到另一个url
 
-rewrite ^\/news\?.*tn\=[a-zA-Z0-9]+.* app/data/news.php
-template ^\/(.*)\?.*  /home/page/index.tpl
-redirect ^\/index\?.* /home/page/index
-配置文件说明
+    rewrite ^\/news\?.*tn\=[a-zA-Z0-9]+.* app/data/news.php
+    template ^\/(.*)\?.*  /home/page/index.tpl
+    redirect ^\/index\?.* /home/page/index
+
+## 配置文件说明
 
 配置文件每一行为一条规则。
 格式为：匹配类型 (空格) 匹配url正则 (空格) 命中正则后的目的文件路径或者url。 rewrite、redirect和template是fis默认的三种匹配类型。
